@@ -1,0 +1,85 @@
+{
+  "users": [
+    {
+      "id": "usr_student",
+      "email": "student@gmail.com",
+      "name": "Student User",
+      "password": "$2b$10$K.DpfsSMiGdDuyXuk93Ql3rsLjPaByWvS5M4jRGIr9",
+      "role": "STUDENT",
+      "interests": "[\"Coding\", \"Technology\"]",
+      "phone": "1234567890",
+      "college": "CampusHub University"
+    },
+    {
+      "id": "usr_manager",
+      "email": "manager@gmail.com",
+      "name": "Event Manager",
+      "password": "$2b$10$K.DpfsSMiGdDuyXuk93Ql3rsLjPaByWvS5M4jRGIr9",
+      "role": "EVENT_MANAGER",
+      "interests": "[]",
+      "phone": "0987654321",
+      "college": "CampusHub University"
+    },
+    {
+      "id": "usr_club",
+      "email": "club@gmail.com",
+      "name": "Club Leader",
+      "password": "$2b$10$K.DpfsSMiGdDuyXuk93Ql3rsLjPaByWvS5M4jRGIr9",
+      "role": "CLUB",
+      "interests": "[]",
+      "phone": "5551234567",
+      "college": "CampusHub University"
+    },
+    {
+      "id": "usr_admin",
+      "email": "admin@gmail.com",
+      "name": "System Admin",
+      "password": "$2b$10$K.DpfsSMiGdDuyXuk93Ql3rsLjPaByWvS5M4jRGIr9",
+      "role": "ADMIN",
+      "interests": "[]",
+      "phone": "9998887777",
+      "college": "CampusHub University"
+    }
+  ],
+  "events": [
+    {
+      "id": "evt_1",
+      "title": "Tech Symposium 2026",
+      "category": "Technology",
+      "fees": 15,
+      "date": "2026-10-12",
+      "time": "10:00 AM",
+      "locationLink": "https://meet.google.com/abc",
+      "isHackathon": false,
+      "description": "Annual tech conference",
+      "creatorId": "usr_manager"
+    },
+    {
+      "id": "evt_2",
+      "title": "Annual Cultural Fest",
+      "category": "Cultural",
+      "fees": 0,
+      "date": "2026-11-05",
+      "time": "6:00 PM",
+      "locationLink": "Auditorium",
+      "isHackathon": false,
+      "description": "Unity and culture celebration",
+      "creatorId": "usr_manager"
+    },
+    {
+      "id": "evt_3",
+      "title": "Inter-College Hackathon",
+      "category": "Coding",
+      "fees": 50,
+      "date": "2026-12-01",
+      "time": "9:00 AM",
+      "locationLink": "https://hackathon.io/campus",
+      "isHackathon": true,
+      "description": "24-hour coding challenge",
+      "creatorId": "usr_manager"
+    }
+  ],
+  "clubs": [],
+  "clubFollows": [],
+  "rsvps": []
+}
