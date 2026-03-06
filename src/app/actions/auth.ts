@@ -1,6 +1,6 @@
 "use server"
 
-import { signIn } from "@/auth"
+import { signIn, signOut } from "@/auth"
 import { redirect } from "next/navigation"
 
 export async function login(formData: FormData): Promise<void> {
@@ -17,3 +17,8 @@ export async function login(formData: FormData): Promise<void> {
         redirect("/login?error=Invalid email or password")
     }
 }
+
+export async function logout(): Promise<void> {
+    await signOut({ redirectTo: "/login?message=Successfully signed out" })
+}
+

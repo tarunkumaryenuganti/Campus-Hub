@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { signOut } from "next-auth/react"
+import { logout } from "@/app/actions/auth"
 
 interface DashboardHeaderProps {
     portalName: string;
@@ -35,12 +35,14 @@ export function DashboardHeader({ portalName, role, userName }: DashboardHeaderP
                     >
                         Home
                     </Link>
-                    <button
-                        onClick={() => signOut({ callbackUrl: "/" })}
-                        className="px-4 py-2 text-sm bg-white/5 hover:bg-white/10 rounded-lg transition-colors border border-white/10 text-white"
-                    >
-                        Sign Out
-                    </button>
+                    <form action={logout}>
+                        <button
+                            type="submit"
+                            className="px-4 py-2 text-sm bg-white/5 hover:bg-white/10 rounded-lg transition-colors border border-white/10 text-white"
+                        >
+                            Sign Out
+                        </button>
+                    </form>
                 </div>
             </div>
         </nav>
