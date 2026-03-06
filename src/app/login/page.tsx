@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { login } from "../actions/auth"
 
-export default function LoginPage() {
+export default function LoginPage({ searchParams }: { searchParams?: { message?: string, error?: string } }) {
     return (
         <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-900 via-purple-900 to-black p-4">
             <div className="w-full max-w-md bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 p-8 shadow-2xl">
@@ -9,6 +9,18 @@ export default function LoginPage() {
                     <h1 className="text-3xl font-bold text-white mb-2">CampusHub</h1>
                     <p className="text-indigo-200">Sign in to your university ecosystem</p>
                 </div>
+
+                {searchParams?.message && (
+                    <div className="mb-6 p-3 bg-green-500/20 border border-green-500/50 rounded text-green-200 text-sm">
+                        {searchParams.message}
+                    </div>
+                )}
+
+                {searchParams?.error && (
+                    <div className="mb-6 p-3 bg-red-500/20 border border-red-500/50 rounded text-red-200 text-sm">
+                        {searchParams.error}
+                    </div>
+                )}
 
                 <form action={login} className="space-y-6">
                     <div>
