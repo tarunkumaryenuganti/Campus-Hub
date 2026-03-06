@@ -1,7 +1,8 @@
 import Link from "next/link"
 import { login } from "../actions/auth"
 
-export default function LoginPage({ searchParams }: { searchParams?: { message?: string, error?: string } }) {
+export default async function LoginPage(props: { searchParams?: Promise<{ message?: string, error?: string }> }) {
+    const searchParams = await props.searchParams;
     return (
         <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-900 via-purple-900 to-black p-4">
             <div className="w-full max-w-md bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 p-8 shadow-2xl">
