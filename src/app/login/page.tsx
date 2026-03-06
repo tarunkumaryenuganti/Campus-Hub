@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { login } from "../actions/auth"
+import { LoginButton } from "@/components/LoginButton"
 
 export default async function LoginPage(props: { searchParams?: Promise<{ message?: string, error?: string }> }) {
     const searchParams = await props.searchParams;
@@ -46,12 +47,7 @@ export default async function LoginPage(props: { searchParams?: Promise<{ messag
                         />
                     </div>
 
-                    <button
-                        type="submit"
-                        className="w-full py-3 px-4 bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-600 hover:to-indigo-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-purple-500/30 transition-all duration-200"
-                    >
-                        Sign In
-                    </button>
+                    <LoginButton />
                     <p className="mt-4 text-center text-indigo-200 text-sm">
                         Don't have an account?{" "}
                         <Link href="/signup" className="text-purple-400 hover:text-purple-300 font-medium">Create one</Link>
