@@ -1,0 +1,37 @@
+﻿node.exe : Γ¿» Failed 
+to start server
+At line:1 char:1
++ & "C:\Program 
+Files\nodejs/node.exe" 
+"C:\Program 
+Files\nodejs/node_mo 
+...
++ ~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~
+    + CategoryInfo     
+         : NotSpecifi  
+  ed: (Γ¿» Failed to   
+  start server:Stri    
+ng) [], RemoteExce    
+ption
+    + FullyQualifiedEr 
+   rorId : NativeComm  
+  andError
+ 
+Error: listen 
+EADDRINUSE: address 
+already in use :::3085
+    at <unknown> 
+(Error: listen 
+EADDRINUSE: address 
+already in use :::3085)
+    at new Promise 
+(<anonymous>) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 3085
+}

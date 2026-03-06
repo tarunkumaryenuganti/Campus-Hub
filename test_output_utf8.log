@@ -1,0 +1,55 @@
+﻿--- Testing Hackathon Features (Mock) ---
+Prisma keys: [ 'default', 'prisma' ]
+Prisma event: undefined
+
+Creating hackathon event...
+node.exe : Test 
+failed: TypeError: 
+Cannot read properties 
+of undefined (reading 
+'create')
+At line:1 char:1
++ & "C:\Program 
+Files\nodejs/node.exe" 
+"C:\Program 
+Files\nodejs/node_mo 
+...
++ ~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~
+    + CategoryInfo     
+         : 
+NotSpecified    : 
+(Test failed: Ty.    
+..ading 'create'):S    
+tring) [], RemoteEx    
+ception
+    + 
+FullyQualifiedErr    
+orId : NativeComman    
+dError
+ 
+    at 
+testHackathonFeatures (
+file:///C:/Users/TARUN%
+20KUMAR/Downloads/b-tec
+h/campusHub%20project/t
+est-admin-features.mjs:
+11:41)
+    at file:///C:/Users
+/TARUN%20KUMAR/Download
+s/b-tech/campusHub%20pr
+oject/test-admin-featur
+es.mjs:72:1
+    at ModuleJob.run (n
+ode:internal/modules/es
+m/module_job:345:25)
+    at async onImport.t
+racePromise.__proto__ (
+node:internal/modules/e
+sm/loader:665:26)
+    at async asyncRunEn
+tryPointWithESMLoader (
+node:internal/modules/r
+un_main:117:5)
