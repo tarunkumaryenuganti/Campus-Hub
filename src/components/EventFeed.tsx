@@ -10,8 +10,10 @@ export function EventFeed() {
     const [loading, setLoading] = useState(true)
     const [activeCategory, setActiveCategory] = useState('All')
     const [selectedEvent, setSelectedEvent] = useState<any>(null)
+    const [mounted, setMounted] = useState(false)
 
     useEffect(() => {
+        setMounted(true)
         const fetchEvents = async () => {
             const res = await getEvents()
             if (res.success) {
@@ -63,7 +65,7 @@ export function EventFeed() {
                                     {evt.category}
                                 </span>
                                 <span className="text-sm text-purple-200 font-mono">
-                                    {new Date(evt.date).toLocaleDateString()}
+                                    {mounted ? new Date(evt.date).toLocaleDateString() : '...'}
                                 </span>
                             </div>
                             <h3 className="text-xl font-bold mb-2 group-hover:text-indigo-400 transition-colors">{evt.title}</h3>
@@ -128,7 +130,9 @@ export function EventFeed() {
                                     <span className="text-indigo-400 mt-1">📅</span>
                                     <div>
                                         <p className="text-sm text-indigo-200 uppercase tracking-wider font-bold">Date & Time</p>
-                                        <p className="text-white">{new Date(selectedEvent.date).toLocaleDateString()} • {selectedEvent.time || 'TBA'}</p>
+                                        <p className="text-white">
+                                            {mounted ? new Date(selectedEvent.date).toLocaleDateString() : '...'} • {selectedEvent.time || 'TBA'}
+                                        </p>
                                     </div>
                                 </div>
 

@@ -13,6 +13,7 @@ export default function ManagerDashboard() {
     const [events, setEvents] = useState<any[]>([])
     const [loading, setLoading] = useState(true)
     const [showForm, setShowForm] = useState(false)
+    const [mounted, setMounted] = useState(false)
 
     const fetchEvents = async () => {
         if (!session?.user?.id) return
@@ -24,6 +25,7 @@ export default function ManagerDashboard() {
     }
 
     useEffect(() => {
+        setMounted(true)
         if (status === "unauthenticated") redirect("/login")
         if (session && session.user?.role !== "EVENT_MANAGER" && session.user?.role !== "ADMIN") {
             redirect("/dashboard")
@@ -101,7 +103,7 @@ export default function ManagerDashboard() {
                                     <tr key={evt.id} className="hover:bg-white/5 transition-colors">
                                         <td className="px-6 py-4 font-medium">{evt.title}</td>
                                         <td className="px-6 py-4">{evt.category}</td>
-                                        <td className="px-6 py-4">{new Date(evt.date).toLocaleDateString()}</td>
+                                        <td className="px-6 py-4">{mounted ? new Date(evt.date).toLocaleDateString() : '...'}</td>
                                         <td className="px-6 py-4">₹{evt.fees}</td>
                                         <td className="px-6 py-4">
                                             <span className="px-2 py-1 bg-green-500/10 text-green-400 text-xs rounded border border-green-500/20">Active</span>
