@@ -34,19 +34,23 @@ class MockPrisma {
             const dir = path.dirname(this.dbPath);
             if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
 
-            fs.writeFileSync(this.dbPath, JSON.stringify({
+            const dataString = JSON.stringify({
                 users: this.users,
                 events: this.events,
                 clubs: this.clubs,
                 clubFollows: this.clubFollows,
                 rsvps: this.rsvps
-            }, null, 2));
+            }, null, 2);
+
+            fs.writeFileSync(this.dbPath, dataString);
+            console.log("Mock DB saved. Total users:", this.users.length);
         } catch (e) {
             console.error("Failed to save mock DB:", e);
         }
     }
 
     private resetToDefaults() {
+        console.log("Resetting Mock DB to defaults...");
         this.users = [
             {
                 id: 'usr_student',
@@ -99,7 +103,9 @@ class MockPrisma {
     user = {
         findUnique: async ({ where }: any) => {
             this.loadData();
-            return this.users.find(u => u.email === where.email || u.id === where.id) || null;
+            const user = this.users.find(u => u.email === where.email || u.id === where.id) || null;
+            if (user) console.log("MockDB - found user:", user.email);
+            return user;
         },
         findMany: async () => {
             this.loadData();
@@ -107,6 +113,14 @@ class MockPrisma {
         },
         create: async ({ data }: any) => {
             this.loadData();
+
+            // Check for existing user
+            const existing = this.users.find(u => u.email === data.email);
+            if (existing) {
+                console.log("MockDB - Email already exists:", data.email);
+                throw new Error("P2002: Unique constraint failed on the fields: (`email`)")
+            }
+
             const newUser = {
                 id: `usr_${Math.random().toString(36).substr(2, 9)}`,
                 ...data,

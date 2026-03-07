@@ -51,11 +51,20 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         }
 
         try {
+          console.log("NextAuth Authorize - looking up user:", credentials.email);
           const user = await prisma.user.findUnique({
             where: { email: credentials.email as string }
           })
 
-          if (!user || !user.password) {
+          if (!user) {
+            console.log("NextAuth Authorize - user NOT found in mock DB:", credentials.email);
+            return null
+          }
+
+          console.log("NextAuth Authorize - user found, checking password...");
+
+          if (!user.password) {
+            console.log("NextAuth Authorize - user has NO password in DB!");
             return null
           }
 
@@ -65,8 +74,11 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
           )
 
           if (!isPasswordValid) {
+            console.log("NextAuth Authorize - password INVALID for:", credentials.email);
             return null
           }
+
+          console.log("NextAuth Authorize - SUCCESS for:", credentials.email);
 
           return {
             id: user.id,

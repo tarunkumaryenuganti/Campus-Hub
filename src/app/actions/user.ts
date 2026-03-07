@@ -14,11 +14,13 @@ export async function signup(formData: FormData) {
     const clubName = formData.get("clubName") as string
 
     if (!email || !password || !role || !phone || !college) {
+        console.log("Missing required fields for signup:", { email, password: !!password, role, phone, college });
         return { error: "Missing required fields" }
     }
 
     try {
         const hashedPassword = await bcrypt.hash(password, 10)
+        console.log("Creating user in mock DB:", email)
         const user = await prisma.user.create({
             data: {
                 name,
@@ -29,6 +31,7 @@ export async function signup(formData: FormData) {
                 role
             }
         })
+        console.log("User created successfully in mock DB:", user.id)
 
         if (role === 'CLUB' && clubName) {
             await prisma.club.create({
