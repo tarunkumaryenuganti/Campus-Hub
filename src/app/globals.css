@@ -96,6 +96,10 @@
 
   body {
     background-color: hsl(var(--background) / 1);
+    background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.50), rgba(240, 244, 248, 0.60), rgba(255, 255, 255, 0.70)), url('/campus-bg.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
     color: hsl(var(--foreground) / 1);
   }
 }
@@ -103,14 +107,14 @@
 /* Glassmorphism utility classes */
 @layer utilities {
   .glass {
-    @apply bg-white/10 backdrop-blur-md border border-white/20 shadow-xl;
+    @apply bg-white/95 backdrop-blur-3xl border border-slate-300/50 shadow-xl;
   }
 
   .glass-card {
-    @apply bg-white/5 backdrop-blur-lg border border-white/10 shadow-2xl rounded-2xl;
+    @apply bg-white/95 backdrop-blur-3xl border border-slate-300/50 shadow-2xl rounded-2xl;
   }
 
   .text-gradient {
-    @apply bg-gradient-to-r from-purple-400 via-pink-500 to-indigo-400 text-transparent bg-clip-text;
+    @apply bg-gradient-to-r from-purple-700 via-pink-600 to-indigo-700 text-transparent bg-clip-text font-extrabold;
   }
 }

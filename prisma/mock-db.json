@@ -39,6 +39,36 @@
       "interests": "[]",
       "phone": "9998887777",
       "college": "CampusHub University"
+    },
+    {
+      "id": "usr_60fp1a91v",
+      "name": "Tarun kumar",
+      "email": "tarunkumaryenuganti01@gmail.com",
+      "phone": "9638527410",
+      "college": "Kalasalingam acadamy of research and education",
+      "password": "$2b$10$9aBjEUTQgq5YiBCxPmMkLuzPY59nyjh4xsSNrb1Bh9c7am.tzlobi",
+      "role": "STUDENT",
+      "interests": "coding, music "
+    },
+    {
+      "id": "usr_ygqc5r577",
+      "name": "varun",
+      "email": "varun0987",
+      "phone": "96385207741",
+      "college": "Kalasalingam acadamy of research and education",
+      "password": "$2b$10$/2/PUsBVcYKrZVWXZBhCNO5tUvHZ7l8kxZ1Oqf6xtySy0qZwtQj0q",
+      "role": "CLUB",
+      "interests": "[]"
+    },
+    {
+      "id": "usr_37rulpptu",
+      "name": "Tarun",
+      "email": "tarun123",
+      "phone": "9638520741",
+      "college": "Kalasalingam acadamy of research and education",
+      "password": "$2b$10$xgf2b5t4HNrFPjMV/LC9neicxH8oZjoImzTE6qXf2SuH1xIWoksIW",
+      "role": "STUDENT",
+      "interests": "[]"
     }
   ],
   "events": [
@@ -79,7 +109,14 @@
       "creatorId": "usr_manager"
     }
   ],
-  "clubs": [],
+  "clubs": [
+    {
+      "id": "club_6jtglm2y3",
+      "name": "food club",
+      "description": "Official club for food club",
+      "ownerId": "usr_ygqc5r577"
+    }
+  ],
   "clubFollows": [],
   "rsvps": []
 }

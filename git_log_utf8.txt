@@ -1,0 +1,10 @@
+﻿eaa751a Ensure unique emails and persistent mock DB
+bc84ff5 Final production push with persistent Mock DB and Login UX
+06f18fd Improve login transparency with logging and loading states
+fdfa8ba Fix final Vercel hydration crashes by ensuring dates only render on client
+fddea43 Fix React hydration error by awaiting searchParams in Next.js 15+
+9e71f80 Fix sign out error using Server Action form
+e6bbd36 Bulletproof login error handling to prevent 500 crash
+d50796e Fix AuthError handling for invalid login credentials
+eb50568 Fix 500 Server Error on invalid login
+08eb270 Initial commit - CampusHub Hackathon Edition

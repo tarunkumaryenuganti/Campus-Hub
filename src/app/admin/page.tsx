@@ -35,19 +35,19 @@ export default function AdminDashboard() {
     }
 
     if (status === "loading" || loading) {
-        return <div className="min-h-screen bg-slate-950 flex items-center justify-center text-white">Loading...</div>
+        return <div className="min-h-screen bg-transparent flex items-center justify-center text-slate-900 font-medium">Loading...</div>
     }
 
     return (
-        <div className="min-h-screen bg-slate-950 p-8">
+        <div className="min-h-screen bg-transparent p-8">
             <div className="max-w-7xl mx-auto mt-12">
                 <div className="bg-red-500/10 backdrop-blur-xl border border-red-500/20 rounded-2xl p-8 shadow-2xl">
-                    <h1 className="text-4xl font-bold text-red-400 mb-4">
+                    <h1 className="text-4xl font-bold text-red-700 font-semibold mb-4">
                         Admin Control Panel
                     </h1>
-                    <p className="text-red-200 mb-8">System-wide moderation and management</p>
+                    <p className="text-red-800 font-semibold mb-8">System-wide moderation and management</p>
 
-                    <div className="bg-black/40 rounded-xl overflow-hidden border border-red-500/20">
+                    <div className="bg-white/95 backdrop-blur-xl rounded-xl overflow-hidden border border-red-500/20">
                         <table className="w-full text-left">
                             <thead className="bg-red-500/10 text-red-300 text-sm">
                                 <tr>
@@ -57,15 +57,15 @@ export default function AdminDashboard() {
                                     <th className="px-6 py-4">Actions</th>
                                 </tr>
                             </thead>
-                            <tbody className="divide-y divide-red-500/10 text-white/90">
+                            <tbody className="divide-y divide-red-500/10 text-slate-900 font-medium/90">
                                 {users.map(u => (
                                     <tr key={u.id} className="hover:bg-red-500/5 transition-colors">
                                         <td className="px-6 py-4 font-medium">{u.name}</td>
-                                        <td className="px-6 py-4 text-white/60">{u.email}</td>
+                                        <td className="px-6 py-4 text-slate-900 font-medium">{u.email}</td>
                                         <td className="px-6 py-4">
-                                            <span className={`px-2 py-1 rounded text-xs font-bold border ${u.role === 'ADMIN' ? 'bg-red-500/20 border-red-500 text-red-400' :
-                                                u.role === 'EVENT_MANAGER' ? 'bg-amber-500/20 border-amber-500 text-amber-400' :
-                                                    'bg-indigo-500/20 border-indigo-500 text-indigo-400'
+                                            <span className={`px-2 py-1 rounded text-xs font-bold border ${u.role === 'ADMIN' ? 'bg-red-500/20 border-red-500 text-red-700 font-semibold' :
+                                                u.role === 'EVENT_MANAGER' ? 'bg-amber-500/20 border-amber-500 text-amber-700 font-semibold' :
+                                                    'bg-indigo-500/20 border-indigo-500 text-indigo-700 font-semibold'
                                                 }`}>
                                                 {u.role}
                                             </span>
@@ -74,7 +74,7 @@ export default function AdminDashboard() {
                                             <select
                                                 value={u.role}
                                                 onChange={(e) => handleRoleChange(u.id, e.target.value)}
-                                                className="bg-black/60 border border-red-500/30 rounded px-2 py-1 text-xs text-white focus:outline-none focus:border-red-500"
+                                                className="bg-black/60 border border-red-500/30 rounded px-2 py-1 text-xs text-slate-900 font-medium focus:outline-none focus:border-red-500"
                                             >
                                                 <option value="STUDENT">Student</option>
                                                 <option value="EVENT_MANAGER">Manager</option>

@@ -37,7 +37,7 @@ async function main() {
             name: 'Student User',
             password,
             role: 'STUDENT',
-            interests: ['Coding', 'Technology'],
+            interests: 'Coding, Technology',
         },
     })
 

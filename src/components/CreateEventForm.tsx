@@ -38,9 +38,9 @@ export function CreateEventForm({ onSuccess }: { onSuccess: () => void }) {
     }
 
     return (
-        <form onSubmit={handleSubmit} className="space-y-4 bg-white/5 p-6 rounded-xl border border-white/10">
+        <form onSubmit={handleSubmit} className="space-y-4 bg-white/95 backdrop-blur-xl p-6 rounded-xl border border-slate-300">
             <div className="flex justify-between items-center mb-4">
-                <h3 className="text-lg font-semibold text-white">Event Details</h3>
+                <h3 className="text-lg font-semibold text-slate-900 font-medium">Event Details</h3>
                 <label className="flex items-center gap-2 cursor-pointer">
                     <input
                         type="checkbox"
@@ -48,28 +48,28 @@ export function CreateEventForm({ onSuccess }: { onSuccess: () => void }) {
                         onChange={(e) => setFormData({ ...formData, isHackathon: e.target.checked })}
                         className="w-4 h-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
                     />
-                    <span className="text-sm font-medium text-amber-400">Is Hackathon?</span>
+                    <span className="text-sm font-medium text-amber-700 font-semibold">Is Hackathon?</span>
                 </label>
             </div>
 
             <div>
-                <label className="block text-sm font-medium text-indigo-300 mb-1">Event Title</label>
+                <label className="block text-sm font-medium text-indigo-700 mb-1">Event Title</label>
                 <input
                     required
                     type="text"
                     value={formData.title}
                     onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                    className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-indigo-500"
+                    className="w-full bg-white/95 backdrop-blur-xl border border-slate-300 rounded-lg px-4 py-2 text-slate-900 font-medium focus:outline-none focus:border-indigo-500"
                     placeholder="e.g. Hackathon 2026"
                 />
             </div>
             <div className="grid grid-cols-2 gap-4">
                 <div>
-                    <label className="block text-sm font-medium text-indigo-300 mb-1">Category</label>
+                    <label className="block text-sm font-medium text-indigo-700 mb-1">Category</label>
                     <select
                         value={formData.category}
                         onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                        className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-indigo-500"
+                        className="w-full bg-white/95 backdrop-blur-xl border border-slate-300 rounded-lg px-4 py-2 text-slate-900 font-medium focus:outline-none focus:border-indigo-500"
                     >
                         <option>Technology</option>
                         <option>Cultural</option>
@@ -79,60 +79,60 @@ export function CreateEventForm({ onSuccess }: { onSuccess: () => void }) {
                     </select>
                 </div>
                 <div>
-                    <label className="block text-sm font-medium text-indigo-300 mb-1">Fees (₹)</label>
+                    <label className="block text-sm font-medium text-indigo-700 mb-1">Fees (₹)</label>
                     <input
                         type="number"
                         value={formData.fees}
                         onChange={(e) => setFormData({ ...formData, fees: parseInt(e.target.value) })}
-                        className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-indigo-500"
+                        className="w-full bg-white/95 backdrop-blur-xl border border-slate-300 rounded-lg px-4 py-2 text-slate-900 font-medium focus:outline-none focus:border-indigo-500"
                     />
                 </div>
             </div>
             <div className="grid grid-cols-2 gap-4">
                 <div>
-                    <label className="block text-sm font-medium text-indigo-300 mb-1">Date</label>
+                    <label className="block text-sm font-medium text-indigo-700 mb-1">Date</label>
                     <input
                         required
                         type="date"
                         value={formData.date}
                         onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-                        className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-indigo-500"
+                        className="w-full bg-white/95 backdrop-blur-xl border border-slate-300 rounded-lg px-4 py-2 text-slate-900 font-medium focus:outline-none focus:border-indigo-500"
                     />
                 </div>
                 <div>
-                    <label className="block text-sm font-medium text-indigo-300 mb-1">Time</label>
+                    <label className="block text-sm font-medium text-indigo-700 mb-1">Time</label>
                     <input
                         type="text"
                         value={formData.time}
                         onChange={(e) => setFormData({ ...formData, time: e.target.value })}
-                        className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-indigo-500"
+                        className="w-full bg-white/95 backdrop-blur-xl border border-slate-300 rounded-lg px-4 py-2 text-slate-900 font-medium focus:outline-none focus:border-indigo-500"
                         placeholder="e.g. 10:00 AM"
                     />
                 </div>
             </div>
             <div>
-                <label className="block text-sm font-medium text-indigo-300 mb-1">Location / Join Link</label>
+                <label className="block text-sm font-medium text-indigo-700 mb-1">Location / Join Link</label>
                 <input
                     type="text"
                     value={formData.locationLink}
                     onChange={(e) => setFormData({ ...formData, locationLink: e.target.value })}
-                    className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-indigo-500"
+                    className="w-full bg-white/95 backdrop-blur-xl border border-slate-300 rounded-lg px-4 py-2 text-slate-900 font-medium focus:outline-none focus:border-indigo-500"
                     placeholder="e.g. Auditorium or https://zoom.us/..."
                 />
             </div>
             <div>
-                <label className="block text-sm font-medium text-indigo-300 mb-1">Description</label>
+                <label className="block text-sm font-medium text-indigo-700 mb-1">Description</label>
                 <textarea
                     value={formData.description}
                     onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                    className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-indigo-500 h-24"
+                    className="w-full bg-white/95 backdrop-blur-xl border border-slate-300 rounded-lg px-4 py-2 text-slate-900 font-medium focus:outline-none focus:border-indigo-500 h-24"
                     placeholder="Briefly describe the event..."
                 />
             </div>
             <button
                 disabled={loading}
                 type="submit"
-                className="w-full py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-lg transition-all shadow-lg shadow-indigo-500/20 disabled:opacity-50"
+                className="w-full py-3 bg-indigo-600 hover:bg-indigo-500 text-slate-900 font-medium font-bold rounded-lg transition-all shadow-lg shadow-indigo-500/20 disabled:opacity-50"
             >
                 {loading ? "Creating..." : "Post Event"}
             </button>
